@@ -3,8 +3,10 @@ import Head from "next/head";
 
 import Link from 'next/link';
 
+import Layout from '../components/layout';
+
 const Index = () => (
-  <div>
+  <Layout firstGridItem={true}>
     <Head>
       <title>Index Page</title>
       <meta
@@ -12,13 +14,13 @@ const Index = () => (
         content="This is a description of the Index page"
       />
     </Head>
-    <div>
+    <div style={{ padding: '0px 30px', fontSize: '15px', height: '100%' }}>
       <p>Content on Index Page</p>
       <Link href='/csr-page' as='/csr-page'>
         <a>Go to CSR page</a>
       </Link>
     </div>
-  </div>
+  </Layout>
 );
 
 export default Index;

@@ -41,6 +41,7 @@ class MyDocument extends Document {
   public render() {
     console.log(`Node Environment: ${process.env.NODE_ENV}`);
     console.log(`URL App: ${process.env.URL_APP}`);
+    console.log('***rendered on the server...');
     return (
       <Html>
         <Head>

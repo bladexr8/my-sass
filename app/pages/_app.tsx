@@ -9,7 +9,7 @@ import { ThemeProvider } from '@material-ui/styles';
 import App from 'next/app';
 import React from 'react';
 // import { isMobile } from '../lib/isMobile';
-import { theme } from '../lib/theme';
+import { themeDark, themeLight } from '../lib/theme';
 
 class MyApp extends App {
   
@@ -25,7 +25,7 @@ class MyApp extends App {
     const { Component, pageProps } = this.props;
 
     return (
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={false ? themeDark : themeLight}>
         <CssBaseline />
         <Component {...pageProps} />
       </ThemeProvider>
