@@ -16,9 +16,12 @@ const Index = () => (
     </Head>
     <div style={{ padding: '0px 30px', fontSize: '15px', height: '100%' }}>
       <p>Content on Index Page</p>
+      <p>
       <Link href='/csr-page' as='/csr-page'>
         <a>Go to CSR page</a>
       </Link>
+      </p>
+      <i className="material-icons">menu</i>
     </div>
   </Layout>
 );
