@@ -1,9 +1,12 @@
+import Button from '@material-ui/core/Button';
 import React from 'react';
 import Head from "next/head";
 
 import Link from 'next/link';
 
 import Layout from '../components/layout';
+
+import notify from '../lib/notify';
 
 const Index = () => (
   <Layout firstGridItem={true}>
@@ -21,7 +24,9 @@ const Index = () => (
         <a>Go to CSR page</a>
       </Link>
       </p>
-      <i className="material-icons">menu</i>
+      <Button variant="contained" onClick={() => notify('some text')}>
+        Open Notifier
+      </Button>
     </div>
   </Layout>
 );
