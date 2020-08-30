@@ -12,6 +12,8 @@
 
 import Grid from '@material-ui/core/Grid';
 import React from 'react';
+import MenuWithLinks from '../common/MenuWithLinks';
+import Avatar from '@material-ui/core/Avatar';
 
 const styleGrid = {
     width: '100vw',
@@ -73,7 +75,41 @@ class Layout extends React.Component<Props> {
                                 />
                             </g>
                             </svg>
-                            <p>Clickable Avatar</p>
+                            <MenuWithLinks
+                                options={[
+                                    {
+                                        text: 'Index page',
+                                        href: '/',
+                                    },
+                                    {
+                                        text: 'Your Settings',
+                                        href: '/your-settings',
+                                    },
+                                    {
+                                        separator: true,
+                                    },
+                                    {
+                                        text: 'Log out',
+                                        href: '/logout',
+                                    },
+                                ]}
+                            >
+                                <Avatar
+                                    src={'https://storage.googleapis.com/async-await/default-user.png'}
+                                    alt="Add username here later in the book"
+                                    style={{
+                                        margin: '20px auto',
+                                        cursor: 'pointer',
+                                        display: 'inline-flex',
+                                        width: '40px',
+                                        height: '40px',
+                                    }}
+                                />
+
+                                <i className="material-icons" color="action" style={{ verticalAlign: 'super' }}>
+                                    arrow_drop_down
+                                </i>
+                            </MenuWithLinks>
                         </div>
                         <hr />
                         <p />
