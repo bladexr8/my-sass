@@ -15,6 +15,7 @@ import React from 'react';
 import MenuWithLinks from '../common/MenuWithLinks';
 import Avatar from '@material-ui/core/Avatar';
 import Notifier from '../common/Notifier';
+import Confirmer from '../common/Confirmer';
 
 const styleGrid = {
     width: '100vw',
@@ -123,6 +124,7 @@ class Layout extends React.Component<Props> {
                     {children}
                 </Grid>
                 <Notifier />
+                <Confirmer />
             </Grid>
         );
     }
