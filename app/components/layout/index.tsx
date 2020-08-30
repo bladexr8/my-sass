@@ -80,10 +80,12 @@ class Layout extends React.Component<Props> {
                                     {
                                         text: 'Index page',
                                         href: '/',
+                                        highlighterSlug: '/',
                                     },
                                     {
                                         text: 'Your Settings',
                                         href: '/your-settings',
+                                        highlighterSlug: '/your-settings',
                                     },
                                     {
                                         separator: true,

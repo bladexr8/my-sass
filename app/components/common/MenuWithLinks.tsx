@@ -4,16 +4,18 @@ import React from 'react';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import Router from 'next/router';
+import { NextRouter, withRouter } from 'next/router';
 
 class MenuWithLinks extends React.PureComponent<{
     options: any[];
+    router: NextRouter;
 }> {
     public state = {
         anchorEl: null,
     };
 
     public render() {
-        const { options, children } = this.props;
+        const { options, children, router } = this.props;
         const { anchorEl } = this.state;
 
         return (
@@ -44,7 +46,7 @@ class MenuWithLinks extends React.PureComponent<{
                                 }}
                                 key={option.href}
                                 style={{
-                                    fontWeight: 300,
+                                    fontWeight: router.asPath.includes(option.highlighterSlug) ? 600 : 300,
                                     fontSize: '14px',
                                 }}
                             >
@@ -66,4 +68,4 @@ class MenuWithLinks extends React.PureComponent<{
     };
 }
 
-export default MenuWithLinks;
+export default withRouter(MenuWithLinks);
