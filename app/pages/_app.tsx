@@ -10,8 +10,21 @@ import App from 'next/app';
 import React from 'react';
 // import { isMobile } from '../lib/isMobile';
 import { themeDark, themeLight } from '../lib/theme';
+import { isMobile } from '../lib/isMobile';
 
 class MyApp extends App {
+
+  public static async getInitialProps({ Component, ctx }) {
+    const pageProps = { isMobile: isMobile({ req: ctx.req }), firstGridItem: true};
+
+    if (Component.getInitialProps) {
+      Object.assign(pageProps, await Component.getInitialProps(ctx));
+    }
+
+    console.log(pageProps);
+
+    return { pageProps };
+  }
   
   public componentDidMount() {
     // Remove the server-side injected CSS

@@ -26,11 +26,11 @@ class MyDocument extends Document {
 
     const initialProps = await Document.getInitialProps(ctx);
 
-    console.log(`Initial Props: ${initialProps}`);
+    /* console.log(`Initial Props: ${initialProps}`);
     console.log(`Initial Props Styles: ${initialProps.styles}`);
     console.log(`React Children Styles Array: ${React.Children.toArray(initialProps.styles)}`);
     console.log(`Server Style Sheets: ${sheets}`);
-    console.log(`Server Style Sheets Style Element: ${sheets.getStyleElement()}`);
+    console.log(`Server Style Sheets Style Element: ${sheets.getStyleElement()}`); */
 
     return {
       ...initialProps,
@@ -40,7 +40,7 @@ class MyDocument extends Document {
   
   public render() {
     console.log(`Node Environment: ${process.env.NODE_ENV}`);
-    console.log(`URL App: ${process.env.URL_APP}`);
+    // console.log(`URL App: ${process.env.URL_APP}`);
     console.log('***rendered on the server...');
     return (
       <Html>

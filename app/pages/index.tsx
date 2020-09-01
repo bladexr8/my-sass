@@ -10,52 +10,56 @@ import NProgress from 'nprogress';
 import notify from '../lib/notify';
 import confirm from '../lib/confirm';
 
-const Index = () => (
-  <Layout firstGridItem={true}>
-    <Head>
-      <title>Index Page</title>
-      <meta
-        name="description"
-        content="This is a description of the Index page"
-      />
-    </Head>
-    <div style={{ padding: '0px 30px', fontSize: '15px', height: '100%' }}>
-      <p>Content on Index Page</p>
-      <p>
-      <Link href='/csr-page' as='/csr-page'>
-        <a>Go to CSR page</a>
-      </Link>
-      </p>
-      <Button variant="contained" onClick={() =>
-        confirm({
-          title: 'Are you sure?',
-          message: 'explanatory message',
-          onAnswer: async (answer) => {
-            console.log(answer);
+class Index extends React.Component {
+  public render() {
+    return (
+      <Layout {...this.props}>
+        <Head>
+          <title>Index Page</title>
+            <meta
+              name="description"
+              content="This is a description of the Index page"
+            />
+        </Head>
+        <div style={{ padding: '0px 30px', fontSize: '15px', height: '100%' }}>
+          <p>Content on Index Page</p>
+          <p>
+          <Link href='/csr-page' as='/csr-page'>
+            <a>Go to CSR page</a>
+          </Link>
+          </p>
+          <Button variant="contained" onClick={() =>
+            confirm({
+              title: 'Are you sure?',
+              message: 'explanatory message',
+              onAnswer: async (answer) => {
+                console.log(answer);
 
-            if (!answer) {
-              return;
-            }
+                if (!answer) {
+                  return;
+                }
 
-            console.log('***Starting NProgress...');
-            NProgress.start();
+                console.log('***Starting NProgress...');
+                NProgress.start();
 
-            try {
-              notify('You successfully confirmed.');
-            } catch (error) {
-              console.error(error);
-              notify(error);
-            } finally {
-              console.log('***Completing NProgress...');
-              NProgress.done();
-            }
-          },
-        })
-      }>
-        Test Confirmer and  Notifier
-      </Button>
-    </div>
-  </Layout>
-);
+                try {
+                  notify('You successfully confirmed.');
+                } catch (error) {
+                  console.error(error);
+                  notify(error);
+                } finally {
+                  console.log('***Completing NProgress...');
+                  NProgress.done();
+                }
+              },
+            })
+          }>
+            Test Confirmer and  Notifier
+          </Button>
+        </div>
+      </Layout>
+    );
+  }
+}
 
 export default Index;
